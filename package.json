@@ -1,0 +1,32 @@
+{
+  "name": "electron-easy-updater",
+  "version": "1.0.0",
+  "description": "A lightweight Electron auto-update library designed for seamless integration. Works with electron-easy-builder to effortlessly handle both full updates and minimal updates on Windows and macOS.",
+  "author": "Agua.L",
+  "license": "MIT",
+  "keywords": [],
+  "scripts": {
+    "prepare": "npm run build",
+    "watch": "tsc -w",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/featherJ/electron-easy-updater"
+  },
+  "bugs": {
+    "url": "https://github.com/featherJ/electron-easy-updater/issues"
+  },
+  "homepage": "https://github.com/featherJ/electron-easy-updater#readme",
+  "devDependencies": {
+    "prettier": "^3.4.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.7.2"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
