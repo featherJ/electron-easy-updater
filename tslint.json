@@ -4,6 +4,9 @@
         "tslint-config-prettier"
     ],
     "rules": {
-        "interface-name": false
+        "interface-name": false,
+        "object-literal-sort-keys": false,
+        "no-shadowed-variable":false,
+        "member-ordering":false
     }
 }

@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/featherJ/electron-easy-updater#readme",
   "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "@types/node": "^22.10.1",
     "prettier": "^3.4.1",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
@@ -28,5 +30,8 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "dependencies": {
+    "tiny-typed-emitter": "^2.1.0"
+  }
 }
