@@ -387,31 +387,33 @@ export class AppUpdater extends TypedEmitter<AppUpdaterEvents> {
                 if (!writeable) {
                     cmd = 'sudu ' + cmd;
                 }
-                exec(cmd, (error, stdout, stderr) => {
-                    // 这里需要抛出错误，更新弹窗可以根据这个来显示更新失败
-                    if (error) {
-                        this.logger.warn(`Update failed: ${error}`);
-                        this.emit('error', error, (error.stack || error).toString());
-                        reject(error);
-                        return;
-                    }
-                    if (stderr) {
-                        this.logger.warn(`Update failed: ${stderr}`);
-                        this.emit('error', new Error(stderr), stderr);
-                        reject(new Error(stderr));
-                        return;
-                    }
-                    if (this.development) {
-                        this.logger.info(
-                            `Update complete. In the development environment, the application will not be restarted to avoid a loop.`,
-                        );
-                    } else {
+                if (this.development) {
+                    this.logger.info(
+                        `Update complete. In development mode, updates won't be installed, and the application won't restart to avoid entering a loop.`,
+                    );
+                } else {
+                    exec(cmd, (error, stdout, stderr) => {
+                        // 这里需要抛出错误，更新弹窗可以根据这个来显示更新失败
+                        if (error) {
+                            this.logger.warn(`Update failed: ${error}`);
+                            this.emit('error', error, (error.stack || error).toString());
+                            reject(error);
+                            return;
+                        }
+                        if (stderr) {
+                            this.logger.warn(`Update failed: ${stderr}`);
+                            this.emit('error', new Error(stderr), stderr);
+                            reject(new Error(stderr));
+                            return;
+                        }
+
                         this.logger.info(`Update complete, restarting the application.`);
                         app.relaunch();
                         app.quit();
-                    }
-                    resolve();
-                });
+                        resolve();
+                    });
+                }
+
             });
         } else if (this.currentUpdateConfig.system === 'win') {
             this.logger.info(`Starting update on Windows.`);
