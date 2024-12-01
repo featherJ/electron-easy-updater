@@ -1,32 +1,34 @@
 # Electron Easy Updater
 
-[中文文档](README_CN.md) | English
+中文文档 | [English](README.md)
 
-This is a Node.js module for automatic updates in Electron applications. When used together with [electron-easy-builder](https://github.com/featherJ/electron-easy-builder), it simplifies implementing both full updates and minimal updates for Electron applications on Windows and macOS.
+这是一个用于 Electron 程序自动更新的 NodeJs 模块。配合 [electron-easy-builder](https://github.com/featherJ/electron-easy-builder) 可以更简单的实现 Electron 程序在 Windows 和 Mac OS 上的的全量更新与最小体积更新。
 
-## Features Overview
-* Supports Windows and macOS systems.
-* Update packages on macOS do not require mandatory signing.
-* Automatically determines whether the update is a full update or a minimal update.
-  * A full update replaces the entire application.
-  * A minimal update only updates the asar package and resource files, without downloading the Electron and Node runtime environments.
+## 功能简介
+* 支持 Windows 和 MacOS 系统。
+* MacOS 上不强制要求更新包必须为已签名。
+* 自动判断本次更新是全量更新，还是最小更新。
+    * 全量更新是更新应用的全部内容。
+    * 最小更新是只更新 asar 包，以及资源文件。而不会下载 Electron 和 Node 等运行环境。
 
-## Packaging Electron Applications
-This update module only supports applications packaged using electron-easy-builder. For instructions on how to package with electron-easy-builder, refer to: https://github.com/featherJ/electron-easy-builder
 
-## How It Works
-During the packaging process with electron-easy-builder, a `build` field is generated in both the packaged application and the update configuration file based on the project's current Electron version and the compilation and packaging parameters applied to the final application.
+## Electron 程序的打包
+这个更新模块，只支持通过 electron-easy-builder 打包的应用程序。 关于如何使用 electron-easy-builder 进行打包，可以参考： https://github.com/featherJ/electron-easy-builder
 
-The update module compares the remote update configuration file with the local application's `build` parameters to determine whether the update needs to download the entire runtime environment or only update the resource files.
 
-On macOS, the update module directly overwrites the contents of the current app with the update package and restarts the application to complete the update.
+## 工作原理
+使用 electron-easy-builder 打包的过程中，会根据当前项目的 electron 版本，以及会作用到最终应用程序上的编译和打包参数等信息，生成一个 `build` 字段到打包结果以及更新配置文件中。
 
-On Windows, the update module opens the update package installer and exits the current application. The installer then installs the update and restarts the application once the installation is complete.
+更新模块会对比远程更新配置文件与当前应用程序中的 `build` 参数，来判断本地更新是否需要下载全部依赖环境，亦或是只更新资源部分。
 
-## How to Use
-The API of this update module is very simple. For usage examples, refer to: https://github.com/featherJ/editor-electron-template/blob/master/src/code/electron-main/main.ts
+在 MacOS 系统中，更新模块会将更新包内容直接覆盖到当前 app 中，并重启当前应用以完成更新。
 
-In `main.ts`:
+在 Windows 系统中，更新模块会打开更新包的安装器程序，并退出当前应用。接下来会由安装器来安装更新，并在安装完成后重新打开当前程序。 
+
+## 如何使用
+当前更新模块的 API 极其简洁。使用示例可参考： https://github.com/featherJ/editor-electron-template/blob/master/src/code/electron-main/main.ts
+
+在 `main.ts` 中：
 ```typescript
 // TODO 将如下 configUrl 替换为您已配置好的地址
 // TODO Replace the following configUrl with your configured address.
@@ -107,4 +109,4 @@ const checkUpdate = async () => {
 ```
 
 ## TODO
-* Minimum system requirements support
+* 最低需要的操作系统的支持
