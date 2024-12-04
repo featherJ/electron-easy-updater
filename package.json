@@ -1,10 +1,11 @@
 {
   "name": "electron-easy-upd8r",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight Electron auto-update library designed for seamless integration. Works with electron-easy-builder to effortlessly handle both full updates and minimal updates on Windows and macOS.",
   "author": "Agua.L",
   "license": "MIT",
   "keywords": [],
+  "main": "./lib/appUpdater.js",
   "scripts": {
     "prepare": "npm run build",
     "watch": "tsc -w",
