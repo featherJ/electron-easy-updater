@@ -1,4 +1,6 @@
 # Electron Easy Updater
+[![NPM Version](http://img.shields.io/npm/v/electron-easy-upd8r.svg?style=flat)](https://www.npmjs.com/package/electron-easy-upd8r)
+[![Install Size](https://packagephobia.now.sh/badge?p=electron-easy-upd8r)](https://packagephobia.now.sh/result?p=electron-easy-upd8r)
 
 中文文档 | [English](README.md)
 
@@ -15,7 +17,6 @@
 ## Electron 程序的打包
 这个更新模块，只支持通过 electron-easy-builder 打包的应用程序。 关于如何使用 electron-easy-builder 进行打包，可以参考： https://github.com/featherJ/electron-easy-builder
 
-
 ## 工作原理
 使用 electron-easy-builder 打包的过程中，会根据当前项目的 electron 版本，以及会作用到最终应用程序上的编译和打包参数等信息，生成一个 `build` 字段到打包结果以及更新配置文件中。
 
@@ -26,10 +27,19 @@
 在 Windows 系统中，更新模块会打开更新包的安装器程序，并退出当前应用。接下来会由安装器来安装更新，并在安装完成后重新打开当前程序。 
 
 ## 如何使用
+
+### 安装
+```
+npm install electron-easy-upd8r@latest
+```
+
+### 示例
 当前更新模块的 API 极其简洁。使用示例可参考： https://github.com/featherJ/editor-electron-template/blob/master/src/code/electron-main/main.ts
 
 在 `main.ts` 中：
 ```typescript
+import { AppUpdater } from "electron-easy-upd8r";
+
 // TODO 将如下 configUrl 替换为您已配置好的地址
 
 /* 在开发过程中，支持本地路径的测试如：/Users/xxx/app-update.json 或 D:\xxx\app-update.json 

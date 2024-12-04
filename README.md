@@ -1,4 +1,6 @@
 # Electron Easy Updater
+[![NPM Version](http://img.shields.io/npm/v/electron-easy-upd8r.svg?style=flat)](https://www.npmjs.com/package/electron-easy-upd8r)
+[![Install Size](https://packagephobia.now.sh/badge?p=electron-easy-upd8r)](https://packagephobia.now.sh/result?p=electron-easy-upd8r)
 
 [中文文档](README_CN.md) | English
 
@@ -24,10 +26,18 @@ On macOS, the update module directly overwrites the contents of the current app 
 On Windows, the update module opens the update package installer and exits the current application. The installer then installs the update and restarts the application once the installation is complete.
 
 ## How to Use
+### Installation
+```
+npm install electron-easy-upd8r@latest
+```
+
+### Example
 The API of this update module is very simple. For usage examples, refer to: https://github.com/featherJ/editor-electron-template/blob/master/src/code/electron-main/main.ts
 
 In `main.ts`:
 ```typescript
+import { AppUpdater } from "electron-easy-upd8r";
+
 // TODO Replace the following configUrl with your configured address.
 
 /* During development, support testing with local paths, e.g., /Users/xxx/app-update.json or D:\xxx\app-update.json.
