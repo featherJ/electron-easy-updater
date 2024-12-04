@@ -2,7 +2,7 @@
 
 中文文档 | [English](README.md)
 
-这是一个用于 Electron 程序自动更新的 NodeJs 模块。配合 [electron-easy-builder](https://github.com/featherJ/electron-easy-builder) 可以更简单的实现 Electron 程序在 Windows 和 Mac OS 上的的全量更新与最小体积更新。
+这是一个用于 Electron 程序自动更新的 NodeJs 模块。配合 [electron-easy-builder](https://github.com/featherJ/electron-easy-builder) 可以更简单的实现 Electron 程序在 **Windows** 和 **macOS** 上的的**全量更新**与**最小更新**。
 
 ## 功能简介
 * 支持 Windows 和 macOS 系统。

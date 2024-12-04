@@ -1,12 +1,25 @@
 {
     "compilerOptions": {
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
       "target": "es5",
       "module": "commonjs",
       "declaration": true,
       "outDir": "./lib",
-      "strict": true,
-      "lib": ["es6"]
+      "allowJs": true,
+      "baseUrl": "./src",
+      "skipLibCheck": true,
+      "alwaysStrict": true,
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "lib": [
+        "es5",
+        "dom",
+        "es2015.promise"
+      ]
     },
-    "include": ["src"],
-    "exclude": ["node_modules", "**/__tests__/*"]
+    "include": [
+      "./src/**/*",
+    ],
   }

@@ -2,7 +2,7 @@
 
 [中文文档](README_CN.md) | English
 
-This is a Node.js module for automatic updates in Electron applications. When used together with [electron-easy-builder](https://github.com/featherJ/electron-easy-builder), it simplifies implementing both full updates and minimal updates for Electron applications on Windows and macOS.
+This is a Node.js module for automatic updates in Electron applications. When used together with [electron-easy-builder](https://github.com/featherJ/electron-easy-builder), it simplifies implementing both **full updates** and **minimal updates** for Electron applications on **Windows** and **macOS**.
 
 ## Features Overview
 * Supports Windows and macOS systems.
