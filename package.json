@@ -5,7 +5,7 @@
   "author": "Agua.L",
   "license": "MIT",
   "keywords": [],
-  "main": "./lib/appUpdater.js",
+  "main": "lib/appUpdater.js",
   "scripts": {
     "prepare": "npm run build",
     "watch": "tsc -w",
