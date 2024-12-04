@@ -1,6 +1,6 @@
 {
   "name": "electron-easy-upd8r",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A lightweight Electron auto-update library designed for seamless integration. Works with electron-easy-builder to effortlessly handle both full updates and minimal updates on Windows and macOS.",
   "author": "Agua.L",
   "license": "MIT",
